@@ -20,6 +20,8 @@ RUN unzip /chromedriver/chromedriver* -d /chromedriver && \
 RUN apt-get update -y
 RUN apt-get install -y google-chrome-stable
 
+RUN apt install -y fonts-droid-fallback fonts-wqy-zenhei fonts-wqy-microhei fonts-arphic-ukai fonts-arphic-uming
+
 COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
 COPY __main__.py .

@@ -85,10 +85,11 @@ print('this is start_time ',start_time)
 # driver.find_element_by_id("kw").send_keys("admin")
 # driver.find_element_by_id("su").click()
 
-time.sleep(10)
+time.sleep(5)
 
 print(driver.get_window_size())
 driver.set_window_size(1920,1080)
+driver.set_window_size(1680,1050)
 print(driver.get_window_size())
 
 driver.save_screenshot('screen.png')
@@ -99,4 +100,3 @@ end_time=time.time()
 print('this is end_time ',end_time)
 
 driver.quit()
-
