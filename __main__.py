@@ -59,6 +59,8 @@ GRAFANA_API_KEY="eyJrIjoidGdvYkhyZTkxS1BldkoyVVZKdmQ4UUNiVGhMNlZUbWgiLCJuIjoid2V
 
 chrome_options = Options()
 chrome_options.add_argument("--headless")
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--disable-dev-shm-usage')
 chrome_options.add_argument('Authorization=Bearer eyJrIjoidGdvYkhyZTkxS1BldkoyVVZKdmQ4UUNiVGhMNlZUbWgiLCJuIjoid2Vla2x5LXJlcG9ydHMiLCJpZCI6MX0=')
  
 base_url = "http://172.29.40.27:32001/d/sgrwz7XGz/test-weekly-report?orgId=1&refresh=30s"
@@ -83,7 +85,11 @@ print('this is start_time ',start_time)
 # driver.find_element_by_id("kw").send_keys("admin")
 # driver.find_element_by_id("su").click()
 
-time.sleep(20)
+time.sleep(10)
+
+print(driver.get_window_size())
+driver.set_window_size(1920,1080)
+print(driver.get_window_size())
 
 driver.save_screenshot('screen.png')
  
@@ -92,4 +98,5 @@ driver.close()
 end_time=time.time()
 print('this is end_time ',end_time)
 
+driver.quit()
 
