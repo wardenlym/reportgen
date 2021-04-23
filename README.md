@@ -22,3 +22,5 @@ pod_num/deployment/cpu/mem/disk/bandwith (关键性资源与上周环比增长/�
 svc request - by namespace (服务调用量环比变化)
 
 预计需要2-3周左右。
+
+
