@@ -158,3 +158,5 @@ report_gen-*.tar
 
 # Temporary files for e.g. tests
 /tmp
+
+*.docx

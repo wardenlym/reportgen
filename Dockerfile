@@ -9,18 +9,17 @@ RUN apt-get update -y && \
   apt-get install -y google-chrome-stable && \
   CHROMEVER=$(google-chrome --product-version | grep -o "[^\.]*\.[^\.]*\.[^\.]*") && \
   DRIVERVER=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROMEVER") && \
-  wget -q --continue -P /chromedriver "http://chromedriver.storage.googleapis.com/$DRIVERVER/chromedriver_linux64.zip"
-  
-RUN unzip /chromedriver/chromedriver* -d /chromedriver && \
+  wget -q --continue -P /chromedriver "http://chromedriver.storage.googleapis.com/$DRIVERVER/chromedriver_linux64.zip" && \
+  # copy chromedriver
+  unzip /chromedriver/chromedriver* -d /chromedriver && \
   ls /chromedriver && \
   chmod 755 /chromedriver/chromedriver && \
-  mv /chromedriver/chromedriver /usr/bin/chromedriver
-
-# Update the package list and install chrome
-RUN apt-get update -y
-RUN apt-get install -y google-chrome-stable
-
-RUN apt install -y fonts-droid-fallback fonts-wqy-zenhei fonts-wqy-microhei fonts-arphic-ukai fonts-arphic-uming
+  mv /chromedriver/chromedriver /usr/bin/chromedriver && \
+  # Update the package list and install chrome
+  apt-get update -y && \
+  apt-get install -y google-chrome-stable && \
+  # fonts
+  apt install -y fonts-droid-fallback fonts-wqy-zenhei fonts-wqy-microhei fonts-arphic-ukai fonts-arphic-uming
 
 COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt

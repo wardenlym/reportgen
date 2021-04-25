@@ -9,12 +9,14 @@ hpack==4.0.0
 hyperframe==6.0.0
 idna==2.10
 kaitaistruct==0.9
+lxml==4.6.3
 prometheus-client==0.10.0
 pyasn1==0.4.8
 pycparser==2.20
 pyOpenSSL==20.0.1
 pyparsing==2.4.7
 PySocks==1.7.1
+python-docx==0.8.10
 requests==2.25.1
 selenium==3.141.0
 selenium-wire==4.2.4
