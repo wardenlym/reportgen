@@ -56,7 +56,18 @@ driver.quit()
 
 
 from docx import Document
+from docx.shared import Inches
 
 document = Document()
-paragraph = document.add_paragraph('Lorem ipsum dolor sit amet.')
+
+document.add_heading('Cluster Weekly Report',0)
+document.add_heading('集群资源',1)
+document.add_heading('本周/上周对比',2)
+# document.add_heading(u'三级标题',3)
+
+paragraph = document.add_paragraph('本周集群资源总览')
+
+#增加图片（此处使用相对位置）
+document.add_picture(output_dir+'/screen.png',width=Inches(7))
+
 document.save(output_dir+'/weekly-report.docx')

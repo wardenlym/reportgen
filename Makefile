@@ -3,3 +3,4 @@ all:
 
 image:
 	docker build . -t wardenlym/reportgen
+	docker push wardenlym/reportgen
